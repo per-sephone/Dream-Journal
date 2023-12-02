@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1>Dream Journal</h1>
+    <h3><a href="{{ url_for('logout') }}">Logout Here</a></h3>
+    <form action="{{ url_for('index') }}" method=post>
+        <p class="heading">Write your dream here (max characters 1000): <br>
+            <textarea maxlength="1000" rows=5 cols=50 name=text></textarea></p>
+	<p><input type=submit value=Submit></p>
+    </form>
+
+    <h1>Journal Entries</h1>
+    {% for entry in entries %}
+    <form>
+        <p class=entry>
+            {{ entry.text }}<br><br>
+            {{ entry.timestamp }} <br><br>
+            Sentiment Analysis: {{ entry.sentiment }} <br><br>
+            <img src="{{ entry.img }}"></img> <br><br>
+        </p>
+    </form>
+    {% endfor %}
+{% endblock %}

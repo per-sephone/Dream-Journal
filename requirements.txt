@@ -1,0 +1,10 @@
+wheel
+flask
+google-cloud-datastore
+google-cloud-firestore
+gunicorn
+rsa
+requests_oauthlib
+openai
+google-cloud-language
+google-cloud-storage
